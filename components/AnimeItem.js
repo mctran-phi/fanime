@@ -1,11 +1,14 @@
+import Link from 'next/link'
 import styles from '../styles/AnimeItem.module.css';
 
 const AnimeItem = ({anime}) => {
   return (
-    <div className={styles.anime_item}>
-      <img src={anime.posterImage.tiny}></img>
-      <p>{anime.titles.en_jp}</p>
-    </div>
+    <Link href="/anime/[id]" as={`/anime/${anime.id}`}>
+      <div className={styles.anime_item}>
+        <img src={anime.attributes.posterImage.tiny}></img>
+        <p>{anime.attributes.titles.en_jp}</p>
+      </div>
+    </Link>
   );
 }
 

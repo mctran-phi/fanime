@@ -1,20 +1,19 @@
 import Link from 'next/link';
-import AnimeItem from '../components/AnimeItem';
+import AnimeList from '../components/AnimeList';
 import Search from '../components/Search';
 import Panel from '../components/Panel';
 import React, {useState} from 'react';
+import axios from 'axios';
 import styles from '../styles/Home.module.css';
 
-export default function Home({data}) {
-  const [animes, setAnimes] = useState(data);
+export default function Home({anime}) {
+  const [animes, setAnimes] = useState(anime);
 
   return (
     <div>
       <Search />
       <div className={styles.body}>
-        <div className={styles.anime_list}>
-          {animes.map(anime => <AnimeItem key={anime.id} anime={anime.attributes}/>)}
-        </div>
+        <AnimeList animes={animes}/>
         <div className={styles.panel}>
           <Panel />
         </div>
@@ -28,19 +27,18 @@ export default function Home({data}) {
 }
 
 export const getStaticProps = async () => {
-  const data = await fetch('https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=10', {
+  const anime = await axios('https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0', {
     headers: {
       'Accept': 'application/vnd.api+json',
       'Content-Type': 'application/vnd.api+json'
     }
   })
-    .then(res => res.json())
-    .then(res => res.data)
+    .then(res => res.data.data)
     .catch(err => console.error(err));
 
   return {
     props: {
-      data
+      anime
     }
   };
 }
