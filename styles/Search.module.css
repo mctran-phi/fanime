@@ -1,0 +1,12 @@
+.search {
+  width: 50%;
+  height: 20px;
+  margin: 10px;
+  margin-left: 12em;
+  border: 0;
+  border-radius: 3px;
+}
+
+.search_bar {
+  margin-top: 10px;
+}

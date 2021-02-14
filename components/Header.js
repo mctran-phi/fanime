@@ -3,7 +3,7 @@ import styles from '../styles/Header.module.css';
 
 const Header = () => {
   return (
-    <div>
+    <div className={styles.head}>
       <Head>
         <title>Anime</title>
         <link rel="icon" href="/pikachu.svg" />

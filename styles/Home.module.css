@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   border: 1px solid rgb(56, 55, 55, 0.5);
+  background-color: rgba(104, 102, 102, 0.8);
   margin: 10px;
   padding: 10px;
   width: 75%;
@@ -15,4 +16,15 @@
 .buttons {
   text-align: center;
   width: 75%;
+}
+
+.body {
+  display: flex;
+}
+
+.panel {
+  margin: 10px;
+  padding: 10px;
+  width: 25%;
+  background-color: rgba(104, 102, 102, 0.8);
 }

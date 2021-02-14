@@ -1,15 +1,21 @@
 .header {
   display: flex;
-  justify-content: space-evenly;
   width: 75%;
 }
 
 .title {
   font-size: 5em;
-  text-shadow: 2px black;
+  text-shadow: 0 0 5px rgb(184, 18, 18);
+  margin-left: 3em;
 }
 
 .image {
-  height: 200px;
-  width: 200px;
+  height: 175px;
+  width: 175px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.head {
+  background-color: rgba(104, 102, 102, 0.8);
 }
