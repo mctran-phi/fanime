@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  width: 75%;
+}
+
+.title {
+  font-size: 5em;
+  text-shadow: 2px black;
+}
+
+.image {
+  height: 200px;
+  width: 200px;
+}

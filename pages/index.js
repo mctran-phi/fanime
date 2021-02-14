@@ -1,12 +1,18 @@
-import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 import AnimeItem from '../components/AnimeItem';
+import styles from '../styles/Home.module.css';
 
 export default function Home({animes}) {
   console.log(animes);
   return (
     <div>
-      {animes.map(anime => <AnimeItem key={anime.id} anime={anime.attributes}/>)}
+      <div className={styles.anime_list}>
+        {animes.map(anime => <AnimeItem key={anime.id} anime={anime.attributes}/>)}
+      </div>
+      <div className={styles.buttons}>
+        <button className={styles.prev}>Prev</button>
+        <button className={styles.next}>Next</button>
+      </div>
     </div>
   );
 }
