@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import styles from '../styles/Header.module.css';
 
 const Header = () => {
@@ -9,8 +10,12 @@ const Header = () => {
         <link rel="icon" href="/pikachu.svg" />
       </Head>
       <div className={styles.header}>
-        <h1 className={styles.title}>Anime</h1>
-        <img className={styles.image} src='/sharingan.png'></img>
+        <Link href='/'>
+          <h1 className={styles.title}>Anime</h1>
+        </Link>
+        <Link href='/'>
+          <img className={styles.image} src='/sharingan.png'></img>
+        </Link>
       </div>
     </div>
   );

@@ -8,15 +8,13 @@ import styles from '../styles/Home.module.css';
 
 export default function Home({anime}) {
   const [animes, setAnimes] = useState(anime);
-
+  console.log(anime);
   return (
     <div>
       <Search />
       <div className={styles.body}>
         <AnimeList animes={animes}/>
-        <div className={styles.panel}>
-          <Panel />
-        </div>
+        <Panel />
       </div>
       <div className={styles.buttons}>
         <button className={styles.prev}>Prev</button>

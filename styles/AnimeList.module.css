@@ -1,8 +1,7 @@
 .anime_list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  border: 1px solid rgb(56, 55, 55, 0.5);
+  border-radius: 2px;
   background-color: rgba(104, 102, 102, 0.8);
   margin: 10px;
   padding: 10px;

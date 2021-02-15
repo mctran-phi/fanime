@@ -1,0 +1,18 @@
+.episode_container {
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+}
+
+.episode_image {
+  margin-right: 10px;
+}
+
+.episode_title {
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.episode_image:hover {
+  cursor: pointer;
+}

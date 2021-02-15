@@ -1,4 +1,10 @@
 .anime_item {
-  width: 200px;
+  width: 175px;
   text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+.anime_item:hover {
+  cursor: pointer;
 }

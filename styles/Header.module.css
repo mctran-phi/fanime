@@ -1,12 +1,11 @@
 .header {
   display: flex;
-  width: 75%;
+  justify-content: center;
 }
 
 .title {
   font-size: 5em;
   text-shadow: 0 0 5px rgb(184, 18, 18);
-  margin-left: 3em;
 }
 
 .image {
@@ -18,4 +17,8 @@
 
 .head {
   background-color: rgba(104, 102, 102, 0.8);
+}
+
+.image:hover, .title:hover {
+  cursor: pointer;
 }
