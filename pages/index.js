@@ -8,7 +8,6 @@ import styles from '../styles/Home.module.css';
 
 export default function Home({anime}) {
   const [animes, setAnimes] = useState(anime);
-  console.log(anime);
   return (
     <div>
       <Search />
@@ -25,7 +24,7 @@ export default function Home({anime}) {
 }
 
 export const getStaticProps = async () => {
-  const anime = await axios('https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0', {
+  let anime = await axios('https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0', {
     headers: {
       'Accept': 'application/vnd.api+json',
       'Content-Type': 'application/vnd.api+json'

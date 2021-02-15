@@ -7,7 +7,7 @@ const Episodes = ({id}) => {
   const [episodes, setEpisodes] = useState([]);
 
   useEffect(() => {
-    axios(`https://kitsu.io/api/edge/anime/${id}/episodes`)
+    axios(`https://kitsu.io/api/edge/anime/${id}/episodes?page[limit]=20&page[offset]=0`)
       .then(res => setEpisodes(res.data.data))
       .catch(err => console.error(err));
   }, []);
