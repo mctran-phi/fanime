@@ -1,7 +1,6 @@
 import styles from '../styles/EpisodeList.module.css';
 
 const EpisodeList = ({episode}) => {
-
   return (
     <div>
       <div className={styles.episode_title}>

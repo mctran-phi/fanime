@@ -7,8 +7,9 @@ li:not(:last-child) {
 }
 
 li {
+  margin-right: 35px;
   list-style-type: none;
-  text-align: left;
+  text-align: center;
 }
 
 li:hover {

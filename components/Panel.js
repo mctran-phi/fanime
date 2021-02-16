@@ -47,13 +47,13 @@ const Panel = () => {
       <div>
         <h4>Popular Anime</h4>
         <ul>
-          {popular.map(anime => <li>{anime.attributes.titles.en_jp}</li>)}
+          {popular.map(anime => <li key={anime.id}>{anime.attributes.titles.en_jp}</li>)}
         </ul>
       </div>
       <div>
         <h4>Recently Updated</h4>
         <ul>
-          {updated.map(anime => <li>{anime.attributes.titles.en_jp}</li>)}
+          {updated.map(anime => <li key={anime.id}>{anime.attributes.titles.en_jp}</li>)}
         </ul>
       </div>
     </div>
