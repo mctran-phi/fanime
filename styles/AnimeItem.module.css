@@ -7,4 +7,5 @@
 
 .anime_item:hover {
   cursor: pointer;
+  color: rgb(57, 57, 236);
 }

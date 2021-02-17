@@ -37,10 +37,10 @@ const Episodes = ({anime}) => {
     return episodes;
   };
 
-  let handleScroll = (e) => {
-    console.log(window.scrollY - 450, document.getElementsByClassName(styles.episodes)[0].clientHeight);
+  let handleScroll = e => {
+    console.log(window.scrollY - 300, document.getElementsByClassName(styles.episodes)[0].clientHeight);
     try {
-      if (window.scrollY - 450 > document.getElementsByClassName(styles.episodes)[0].clientHeight) {
+      if (window.scrollY - 300 > document.getElementsByClassName(styles.episodes)[0].clientHeight) {
         setOffset(prev => prev + 20);
       }
     } catch (err) {

@@ -2,7 +2,7 @@ import styles from '../styles/EpisodeList.module.css';
 
 const EpisodeList = ({episode, anime}) => {
   return (
-    <div>
+    <div className={styles.episodes}>
       <div className={styles.episode_title}>
         {anime.attributes.titles.en_jp} Episode {episode.attributes.number}
         {episode.attributes.canonicalTitle ? <span>: {episode.attributes.canonicalTitle}</span> : null}

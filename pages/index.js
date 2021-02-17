@@ -10,6 +10,8 @@ export default function Home() {
   const [animes, setAnimes] = useState([]);
   const [offset, setOffset] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState([]);
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
     const loadAnimes = async () => {
@@ -50,11 +52,28 @@ export default function Home() {
     }
   };
 
+  let handleChange = async query => {
+    setQuery(query);
+    let search = await axios(`https://kitsu.io/api/edge/anime?filter[text]=${query}`, {
+      headers: {
+        'Accept': 'application/vnd.api+json',
+        'Content-Type': 'application/vnd.api+json'
+      }
+    })
+      .then(res => res.data.data)
+      .catch(err => console.error(err));
+    setSearch(search);
+  }
+
+  let handleClear = () => {
+    setQuery('');
+  }
+
   return (
     <div>
-      <Search />
+      <Search handleChange={handleChange} handleClear={handleClear}/>
       <div className={styles.body}>
-        <AnimeList animes={animes}/>
+        {query.length > 0 ? <AnimeList animes={search}/> : <AnimeList animes={animes}/>}
         <Panel />
       </div>
       <div className={styles.load}>{loading && 'Loading...'}</div>
