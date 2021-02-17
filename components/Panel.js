@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {useState, useEffect} from 'react';
+import Link from 'next/link';
 import styles from '../styles/Panel.module.css';
 
 const Panel = () => {
@@ -47,13 +48,25 @@ const Panel = () => {
       <div>
         <h4>Popular Anime</h4>
         <ul>
-          {popular.map(anime => <li key={anime.id}>{anime.attributes.titles.en_jp}</li>)}
+          {popular.map(anime => {
+            return (
+              <Link href="/anime/[id]" as={`/anime/${anime.id}`}>
+                <li key={anime.id}>{anime.attributes.titles.en_jp}</li>
+              </Link>
+            );
+          })}
         </ul>
       </div>
       <div>
         <h4>Recently Updated</h4>
         <ul>
-          {updated.map(anime => <li key={anime.id}>{anime.attributes.titles.en_jp}</li>)}
+          {updated.map(anime => {
+            return (
+              <Link href="/anime/[id]" as={`/anime/${anime.id}`}>
+                <li key={anime.id}>{anime.attributes.titles.en_jp}</li>
+              </Link>
+            );
+          })}
         </ul>
       </div>
     </div>
