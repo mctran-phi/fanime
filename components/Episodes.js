@@ -3,17 +3,10 @@ import axios from 'axios';
 import EpisodeList from './EpisodeList';
 import styles from '../styles/Episodes.module.css';
 
-const Episodes = ({id}) => {
+const Episodes = ({anime}) => {
   const [episodes, setEpisodes] = useState([]);
   const [offset, setOffset] = useState(0);
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    }
-  }, []);
 
   useEffect(() => {
     const loadEpisodes = async () => {
@@ -25,8 +18,15 @@ const Episodes = ({id}) => {
     loadEpisodes();
   }, [offset]);
 
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   let getEpisodes = async offset => {
-    let episodes = await axios(`https://kitsu.io/api/edge/anime/${id}/episodes?page[limit]=20&page[offset]=${offset}`, {
+    let episodes = await axios(`https://kitsu.io/api/edge/anime/${anime.id}/episodes?page[limit]=20&page[offset]=${offset}`, {
       headers: {
         'Accept': 'application/vnd.api+json',
         'Content-Type': 'application/vnd.api+json'
@@ -37,15 +37,20 @@ const Episodes = ({id}) => {
     return episodes;
   };
 
-  let handleScroll = () => {
-    if (window.scrollY + 335 > document.getElementsByClassName(styles.episodes)[0].clientHeight) {
-      setOffset(prev => prev + 20);
+  let handleScroll = (e) => {
+    console.log(window.scrollY - 450, document.getElementsByClassName(styles.episodes)[0].clientHeight);
+    try {
+      if (window.scrollY - 450 > document.getElementsByClassName(styles.episodes)[0].clientHeight) {
+        setOffset(prev => prev + 20);
+      }
+    } catch (err) {
+      console.error(err);
     }
   };
 
   return (
     <div className={styles.episodes}>
-      {episodes.map(episode => <EpisodeList key={episode.id} episode={episode}/>)}
+      {episodes.map(episode => <EpisodeList key={episode.id} episode={episode} anime={anime}/>)}
       <div>{loading && 'Loading...'}</div>
     </div>
   );

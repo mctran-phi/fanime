@@ -11,7 +11,7 @@ const anime = ({anime}) => {
       <div>
         <h2 className={styles.title}>{anime.attributes.titles.en_jp}</h2>
         <div className={styles.container}>
-          <img src={anime.attributes.posterImage.small}></img>
+          <img className={styles.image} src={anime.attributes.posterImage.small}></img>
           <div className={styles.info}>
             <div className={styles.description}>{anime.attributes.description}</div>
             <div>
@@ -49,7 +49,7 @@ const anime = ({anime}) => {
       </div>
       <div className={styles.episodeList}>
         <h2 className={styles.title}>Watch Here</h2>
-        <Episodes id={anime.id}/>
+        <Episodes anime={anime}/>
       </div>
     </div>
   );

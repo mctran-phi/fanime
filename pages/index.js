@@ -12,13 +12,6 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    }
-  }, []);
-
-  useEffect(() => {
     const loadAnimes = async () => {
       setLoading(true);
       const newAnimes = await getAnimes(offset);
@@ -27,6 +20,13 @@ export default function Home() {
     }
     loadAnimes();
   }, [offset]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
 
   let getAnimes = async offset => {
     let anime = await axios(`https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=${offset}`, {
@@ -41,8 +41,12 @@ export default function Home() {
   };
 
   let handleScroll = () => {
-    if (window.scrollY > document.getElementsByClassName(styles.body)[0].clientHeight - 302) {
-      setOffset(prev => prev + 20);
+    try {
+      if (window.scrollY > document.getElementsByClassName(styles.body)[0].clientHeight - 302) {
+        setOffset(prev => prev + 20);
+      }
+    } catch (err) {
+      console.error(err);
     }
   };
 

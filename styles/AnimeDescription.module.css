@@ -28,3 +28,8 @@
   padding: 10px;
   border: 1px solid rgb(88, 87, 87, 0.5);
 }
+
+.image {
+  width: 40%;
+  height: 60%;
+}
