@@ -21,7 +21,7 @@ const anime = ({anime}) => {
               </div>
               <div className={styles.data}>
                 <label>End Date: </label>
-                <span>{dayjs(anime.attributes.endDate).format('MMMM D, YYYY')}</span>
+                {anime.attributes.endDate ? <span>{dayjs(anime.attributes.endDate).format('MMMM D, YYYY')}</span> : null}
               </div>
               <div className={styles.data}>
                 <label>Status: </label>

@@ -19,3 +19,9 @@
   cursor: pointer;
   color: rgb(57, 57, 236);
 }
+
+.synopsis {
+  width: 25%;
+  height: 25%;
+  overflow: hidden;
+}

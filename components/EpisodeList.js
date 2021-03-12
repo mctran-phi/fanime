@@ -1,6 +1,13 @@
+import {useState} from 'react';
 import styles from '../styles/EpisodeList.module.css';
 
 const EpisodeList = ({episode, anime}) => {
+  // const [hover, setHover] = useState(false);
+
+  // let handleHover = () => {
+  //   setHover(prev => !prev);
+  // };
+  // onMouseEnter={e => handleHover()} onMouseLeave={e => handleHover()}
   return (
     <div className={styles.episodes}>
       <div className={styles.episode_title}>
@@ -9,7 +16,7 @@ const EpisodeList = ({episode, anime}) => {
       </div>
       <div className={styles.episode_container}>
         {episode.attributes.thumbnail ? <img className={styles.episode_image} src={episode.attributes.thumbnail.original}></img> : null}
-        {/* <div>{episode.attributes.synopsis}</div> */}
+        {/* {hover && <div className={styles.synopsis}>{episode.attributes.synopsis}</div>} */}
       </div>
     </div>
   );
