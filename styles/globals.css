@@ -1,5 +1,8 @@
 body {
   background-color: black;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 li:not(:last-child) {
@@ -19,5 +22,5 @@ li {
 
 li:hover {
   cursor: pointer;
-  color: rgb(57, 57, 236);
+  color: cyan;
 }

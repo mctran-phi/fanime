@@ -7,5 +7,10 @@
 
 .anime_item:hover {
   cursor: pointer;
-  color: rgb(57, 57, 236);
+  color: cyan;
+}
+
+.image {
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  border-radius: 5px;
 }

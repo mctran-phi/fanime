@@ -1,5 +1,5 @@
 .search_bar {
-  width: 750px;
+  width: inherit;
   height: 20px;
   margin: 10px;
   border: 0;
@@ -15,8 +15,9 @@
 
 .search {
   margin-top: 10px;
+  margin-left: 10px;
   background-color: cadetblue;
-  width: 900px;
+  width: 71%;
   border-radius: 10px;
 }
 

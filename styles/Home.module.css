@@ -1,9 +1,10 @@
-.prev, .next {
-  margin: 10px;
-}
-
 .body {
   display: flex;
+  justify-content: space-evenly;
+  padding: 5px;
+  margin: 10px;
+  border: 10px solid paleturquoise;
+  border-radius: 5px;
 }
 
 .load {
