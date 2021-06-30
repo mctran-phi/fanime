@@ -57,7 +57,7 @@ export default function Home() {
 
   return (
     <div>
-      <Search handleChange={handleChange} handleClear={handleClear}/>
+      <Search handleChange={handleChange} handleClear={handleClear} search={search}/>
       <div className={styles.body}>
         {query.length > 0 ? <AnimeList animes={search}/> : <AnimeList animes={animes}/>}
         <Panel />
