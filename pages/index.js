@@ -5,6 +5,7 @@ import Panel from '../components/Panel';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import styles from '../styles/Home.module.css';
+import getRequest from '../utils/fetch.js';
 
 export default function Home() {
   const [animes, setAnimes] = useState([]);
@@ -31,15 +32,7 @@ export default function Home() {
   }, []);
 
   let getAnimes = async offset => {
-    let anime = await axios(`https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=${offset}`, {
-      headers: {
-        'Accept': 'application/vnd.api+json',
-        'Content-Type': 'application/vnd.api+json'
-      }
-    })
-      .then(res => res.data.data)
-      .catch(err => console.error(err));
-    return anime;
+    return await getRequest(`https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=${offset}`);
   };
 
   let handleScroll = () => {
@@ -54,14 +47,7 @@ export default function Home() {
 
   let handleChange = async query => {
     setQuery(query);
-    let search = await axios(`https://kitsu.io/api/edge/anime?filter[text]=${query}`, {
-      headers: {
-        'Accept': 'application/vnd.api+json',
-        'Content-Type': 'application/vnd.api+json'
-      }
-    })
-      .then(res => res.data.data)
-      .catch(err => console.error(err));
+    let search = await getRequest(`https://kitsu.io/api/edge/anime?filter[text]=${query}`);
     setSearch(search);
   }
 

@@ -50,8 +50,8 @@ const Panel = () => {
         <ul>
           {popular.map(anime => {
             return (
-              <Link href="/anime/[id]" as={`/anime/${anime.id}`}>
-                <li key={anime.id}>{anime.attributes.titles.en_jp}</li>
+              <Link key={anime.id} href="/anime/[id]" as={`/anime/${anime.id}`}>
+                <li>{anime.attributes.titles.en_jp}</li>
               </Link>
             );
           })}
@@ -62,8 +62,8 @@ const Panel = () => {
         <ul>
           {updated.map(anime => {
             return (
-              <Link href="/anime/[id]" as={`/anime/${anime.id}`}>
-                <li key={anime.id}>{anime.attributes.titles.en_jp}</li>
+              <Link key={anime.id} href="/anime/[id]" as={`/anime/${anime.id}`}>
+                <li>{anime.attributes.titles.en_jp}</li>
               </Link>
             );
           })}

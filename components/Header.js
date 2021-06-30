@@ -14,7 +14,7 @@ const Header = () => {
           <h1 className={styles.title}>Anime</h1>
         </Link>
         <Link href='/'>
-          <img className={styles.image} src='/onepunch_man.png'></img>
+          <img className={styles.image} src='/onepunch_man.png' />
         </Link>
       </div>
     </div>

@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 import EpisodeList from './EpisodeList';
 import styles from '../styles/Episodes.module.css';
+import getRequest from '../utils/fetch.js';
 
 const Episodes = ({anime}) => {
   const [episodes, setEpisodes] = useState([]);
@@ -26,15 +27,7 @@ const Episodes = ({anime}) => {
   }, []);
 
   let getEpisodes = async offset => {
-    let episodes = await axios(`https://kitsu.io/api/edge/anime/${anime.id}/episodes?page[limit]=20&page[offset]=${offset}`, {
-      headers: {
-        'Accept': 'application/vnd.api+json',
-        'Content-Type': 'application/vnd.api+json'
-      }
-    })
-      .then(res => res.data.data)
-      .catch(err => console.error(err));
-    return episodes;
+    return await getRequest(`https://kitsu.io/api/edge/anime/${anime.id}/episodes?page[limit]=20&page[offset]=${offset}`);
   };
 
   let handleScroll = e => {
