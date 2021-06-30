@@ -1,4 +1,4 @@
-.header {
+.container {
   display: flex;
   justify-content: center;
 }
@@ -14,10 +14,24 @@
   margin-top: 10px;
 }
 
-.head {
-  background-color: rgba(104, 102, 102, 0.8);
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: cadetblue;
+  border: 20px solid paleturquoise;
+  border-radius: 10px 10px;
 }
 
-.image:hover, .title:hover {
+.title:hover, .image:hover {
   cursor: pointer;
+}
+
+.title {
+  background: #B7DEED;
+  background: -webkit-linear-gradient(to right, #B7DEED 0%, #71CEEF 25%, #21B4E2 75%, #B7DEED 100%);
+  background: -moz-linear-gradient(to right, #B7DEED 0%, #71CEEF 25%, #21B4E2 75%, #B7DEED 100%);
+  background: linear-gradient(to right, #B7DEED 0%, #71CEEF 25%, #21B4E2 75%, #B7DEED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

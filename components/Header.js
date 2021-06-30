@@ -9,13 +9,15 @@ const Header = () => {
         <title>Anime</title>
         <link rel="icon" href="/pikachu.svg" />
       </Head>
-      <div className={styles.header}>
-        <Link href='/'>
-          <h1 className={styles.title}>Anime</h1>
-        </Link>
-        <Link href='/'>
-          <img className={styles.image} src='/onepunch_man.png' />
-        </Link>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <Link href='/'>
+            <h1 className={styles.title}>Fanime</h1>
+          </Link>
+          <Link href='/'>
+            <img className={styles.image} src='/onepunch_man.png' />
+          </Link>
+        </div>
       </div>
     </div>
   );
