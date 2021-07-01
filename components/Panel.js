@@ -4,32 +4,10 @@ import Link from 'next/link';
 import styles from '../styles/Panel.module.css';
 
 const Panel = () => {
-  const [popular, setPopular] = useState([]);
-  const [updated, setUpdated] = useState([]);
-
-  useEffect(() => {
-    axios('https://kitsu.io/api/edge/anime?sort=popularityRank', {
-      headers: {
-        'Accept': 'application/vnd.api+json',
-        'Content-Type': 'application/vnd.api+json'
-      }
-    }).then(res => setPopular(res.data.data))
-      .catch(err => console.error(err));
-
-    axios('https://kitsu.io/api/edge/anime?sort=updatedAt', {
-      headers: {
-        'Accept': 'application/vnd.api+json',
-        'Content-Type': 'application/vnd.api+json'
-      }
-    }).then(res => setUpdated(res.data.data))
-      .catch(err => console.error(err));
-
-  }, []);
-
   return (
     <div className={styles.body}>
       <div>
-        <h4>Genres</h4>
+        <h4>Search Anime by Genres</h4>
         <ul>
           <li>Action</li>
           <li>Adventure</li>
@@ -43,30 +21,6 @@ const Panel = () => {
           <li>Psychological</li>
           <li>Romance</li>
           <li>Sci-Fi</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Popular Anime</h4>
-        <ul>
-          {popular.map(anime => {
-            return (
-              <Link key={anime.id} href="/anime/[id]" as={`/anime/${anime.id}`}>
-                <li>{anime.attributes.titles.en_jp}</li>
-              </Link>
-            );
-          })}
-        </ul>
-      </div>
-      <div>
-        <h4>Recently Updated</h4>
-        <ul>
-          {updated.map(anime => {
-            return (
-              <Link key={anime.id} href="/anime/[id]" as={`/anime/${anime.id}`}>
-                <li>{anime.attributes.titles.en_jp}</li>
-              </Link>
-            );
-          })}
         </ul>
       </div>
     </div>

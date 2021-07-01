@@ -12,15 +12,18 @@ li:not(:last-child) {
 ul {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 li {
-  display: inline-block;
-  margin-right: 35px;
-  text-align: center;
+  list-style-type: none;
+  width: 100%;
+  margin-right: 30px;
 }
 
 li:hover {
   cursor: pointer;
   color: cyan;
+  text-decoration: underline;
 }
