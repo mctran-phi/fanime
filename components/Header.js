@@ -6,8 +6,8 @@ const Header = () => {
   return (
     <div className={styles.head}>
       <Head>
-        <title>Anime</title>
-        <link rel="icon" href="/pikachu.svg" />
+        <title>Fanime</title>
+        <link rel="icon" href='/pikachu.ico' />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
