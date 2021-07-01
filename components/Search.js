@@ -1,6 +1,6 @@
 import styles from '../styles/Search.module.css';
 
-const Search = ({handleSearch, handleClear, search}) => {
+const Search = ({ handleSearch, handleClear, search }) => {
   let clearQuery = () => {
     document.getElementsByClassName(styles.search_bar)[0].value = '';
     handleClear();

@@ -3,7 +3,7 @@ import AnimeList from '../components/AnimeList';
 import Search from '../components/Search';
 import Panel from '../components/Panel';
 import Filter from '../components/Filter';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from '../styles/Home.module.css';
 import getRequest from '../utils/fetch.js';

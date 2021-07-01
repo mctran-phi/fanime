@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from '../styles/AnimeItem.module.css';
 
-const AnimeItem = ({anime}) => {
+const AnimeItem = ({ anime }) => {
   return (
     <Link href="/anime/[id]" as={`/anime/${anime.id}`}>
       <div className={styles.anime_item}>

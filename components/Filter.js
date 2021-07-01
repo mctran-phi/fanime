@@ -1,6 +1,6 @@
 import styles from '../styles/Filter.module.css';
 
-const Filter = ({handleSelect}) => {
+const Filter = ({ handleSelect }) => {
   let handleChange = e => {
     handleSelect(e);
   };
