@@ -10,7 +10,7 @@
 
 .title {
   text-align: center;
-  color: rgb(141, 44, 44);
+  color: azure;
 }
 
 .info {
@@ -28,4 +28,20 @@
   width: 40%;
   height: 60%;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.video {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  color: azure;
+}
+
+.video img, .video span {
+  margin-left: 10px;
+}
+
+.video img {
+  width: 30px;
+  height: 30px;
 }

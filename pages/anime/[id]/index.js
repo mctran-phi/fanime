@@ -2,9 +2,19 @@ import { useEffect, useState } from 'react';
 import axios from 'axios'
 import dayjs from 'dayjs';
 import styles from '../../../styles/AnimeDescription.module.css';
+import getRequest from '../../../utils/fetch.js';
 
 const anime = ({ anime }) => {
-  console.log(anime);
+  const [video, setVideo] = useState([]);
+
+  useEffect(() => {
+    var loadVidData = async () => {
+      var vidData = await getRequest(anime.relationships.streamingLinks.links.related);
+      setVideo(vidData[0]);
+    };
+    loadVidData();
+  }, []);
+
   return (
     <div>
       <div>
@@ -26,6 +36,13 @@ const anime = ({ anime }) => {
             </ul>
           </div>
         </div>
+        <div className={styles.video}>
+          {console.log(video)}
+          <label>Watch here: </label>
+          {video && video.attributes && video.attributes.url ? (<a href={video.attributes.url} target='_blank'>
+            <img src='/play.svg'></img>
+          </a>) : <span>Not Available</span>}
+        </div>
       </div>
     </div>
   );
@@ -38,8 +55,8 @@ export const getServerSideProps = async (context) => {
       'Content-Type': 'application/vnd.api+json'
     }
   })
-    .then(res => res.data.data[0])
-    .catch(err => console.error(err));
+  .then(res => res.data.data[0])
+  .catch(err => console.error(err));
 
   return {
     props: {
