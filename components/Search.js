@@ -2,7 +2,7 @@ import styles from '../styles/Search.module.css';
 
 const Search = ({handleSearch, handleClear, search}) => {
   let clearQuery = () => {
-    document.getElementsByClassName(styles.search)[0].value = '';
+    document.getElementsByClassName(styles.search_bar)[0].value = '';
     handleClear();
   };
 
