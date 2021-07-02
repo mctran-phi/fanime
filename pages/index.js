@@ -90,7 +90,6 @@ export default function Home() {
 
   return (
     <div>
-      {console.log(animes)}
       <img className={styles.image} src='/up-arrow.svg' onClick={e => handleScrollTop()}></img>
       <Search handleSearch={handleSearch} handleClear={handleClear} query={query} />
       <Filter handleSelect={handleSelect} />

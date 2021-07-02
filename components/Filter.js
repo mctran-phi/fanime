@@ -6,12 +6,13 @@ const Filter = ({ handleSelect }) => {
   };
 
   return (
-    <div className={styles.container}>
-      <select onChange={e => handleChange(e.target.value)}>
-        <option value='0'>All Anime</option>
-        <option value='1'>Popular Anime</option>
-        <option value='2'>Recently Updated</option>
-      </select>
+    <div className={styles.dropdown}>
+      <div className={styles.drop}>Sort By:</div>
+      <div className={styles.content}>
+        <div onClick={e => handleChange('0')}>Anime Id</div>
+        <div onClick={e => handleChange('1')}>Popular Anime</div>
+        <div onClick={e => handleChange('2')}>Recently Updated</div>
+      </div>
     </div>
   );
 };
