@@ -11,11 +11,12 @@ import $ from 'jquery';
 
 export default function Home() {
   const [animes, setAnimes] = useState([]);
-  const [offset, setOffset] = useState(0);
-  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState([]);
   const [query, setQuery] = useState('');
-  const [select, setSelect] = useState('0')
+  const [select, setSelect] = useState('0');
+  const [loading, setLoading] = useState(true);
+  const [offset, setOffset] = useState(0);
+  const [prevY, setPrevY] = useState(0);
 
   useEffect(() => {
     var getAnimes;
@@ -56,7 +57,7 @@ export default function Home() {
   return (
     <div>
       <img className={styles.image} src='/up-arrow.svg' onClick={e => handleScrollTop()}></img>
-      <Search handleSearch={handleSearch} handleClear={handleClear} search={search} />
+      <Search handleSearch={handleSearch} handleClear={handleClear} query={query} />
       <Filter handleSelect={handleSelect} />
       <div className={styles.body}>
         {query.length > 0 ? <AnimeList animes={search}/> : <AnimeList animes={animes} />}
