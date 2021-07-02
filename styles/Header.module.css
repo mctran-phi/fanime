@@ -20,7 +20,6 @@
   width: 100%;
   background-color: cadetblue;
   border: 20px solid paleturquoise;
-  border-radius: 10px 10px;
 }
 
 .title:hover, .image:hover {

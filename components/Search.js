@@ -9,7 +9,7 @@ const Search = ({ handleSearch, handleClear, query }) => {
   return (
     <div className={styles.search}>
       <img className={styles.glass} src='/search.svg'></img>
-      <input className={styles.search_bar} type='text' placeholder='Search an anime...' onChange={e => handleSearch(e.target.value)}></input>
+      <input className={styles.search_bar} type='text' value={query} placeholder='Search an anime...' onChange={e => handleSearch(e.target.value)}></input>
       {query.length > 0 && <img className={styles.clear} onClick={e => clearQuery()} src='/clear.svg'></img>}
     </div>
   );
