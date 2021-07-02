@@ -22,11 +22,3 @@
   height: 50px;
   cursor: pointer;
 }
-
-.hidden {
-  visibility: hidden;
-}
-
-.visible {
-  visibility: visible;
-}

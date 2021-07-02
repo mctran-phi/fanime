@@ -14,10 +14,11 @@
 }
 
 .search {
+  display: inline-block;
   margin-top: 10px;
   margin-left: 10px;
   background-color: cadetblue;
-  width: 73%;
+  width: 70%;
   border-radius: 10px;
 }
 
