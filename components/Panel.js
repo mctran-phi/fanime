@@ -20,7 +20,7 @@ const Panel = ({ handleSelect }) => {
           <li onClick={e => handleSelect(e.target.innerText)}>Mystery</li>
           <li onClick={e => handleSelect(e.target.innerText)}>Psychological</li>
           <li onClick={e => handleSelect(e.target.innerText)}>Romance</li>
-          <li onClick={e => handleSelect(e.target.innerText)}>Sci-Fi</li>
+          <li onClick={e => handleSelect(e.target.innerText)}>Science</li>
         </ul>
       </div>
     </div>

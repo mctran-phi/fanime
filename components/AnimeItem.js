@@ -5,8 +5,8 @@ const AnimeItem = ({ anime }) => {
   return (
     <Link href="/anime/[id]" as={`/anime/${anime.id}`}>
       <div className={styles.anime_item}>
-        <img className={styles.image} src={anime.attributes.posterImage.tiny}></img>
-        <p>{anime.attributes.titles.en_jp}</p>
+        {anime.attributes.posterImage ? <img className={styles.image} src={anime.attributes.posterImage.tiny}></img> : <h1>N/A</h1>}
+        {anime.attributes.titles.en_jp ? <p>{anime.attributes.titles.en_jp}</p> : <p>N/A</p>}
       </div>
     </Link>
   );
