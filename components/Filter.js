@@ -1,7 +1,7 @@
 import styles from '../styles/Filter.module.css';
 
 const Filter = ({ handleSelect }) => {
-  let handleChange = e => {
+  var handleChange = e => {
     handleSelect(e);
   };
 

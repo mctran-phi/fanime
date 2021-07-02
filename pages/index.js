@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from '../styles/Home.module.css';
 import getRequest from '../utils/fetch.js';
+import $ from 'jquery';
 
 export default function Home() {
   const [animes, setAnimes] = useState([]);
@@ -24,35 +25,42 @@ export default function Home() {
         newAnimes = await getRequest('https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=');
       } else if (select === '1') {
         newAnimes = await getRequest('https://kitsu.io/api/edge/anime?page[limit]=20&sort=popularityRank');
-      } else {
+      } else if (select === '2') {
         newAnimes = await getRequest('https://kitsu.io/api/edge/anime?page[limit]=20&sort=updatedAt');
+      } else {
+        newAnimes= await getRequest(`https://kitsu.io/api/edge//anime?page[limit]=20&filter[categories]=${select}&sort=popularityRank`);
       }
       setAnimes(newAnimes);
     }
     loadAnimes();
   }, [select]);
 
-  let handleSearch = async query => {
+  var handleSearch = async query => {
     setQuery(query);
     let search = await getRequest(`https://kitsu.io/api/edge/anime?filter[text]=${query}`);
     setSearch(search);
   };
 
-  let handleClear = () => {
+  var handleClear = () => {
     setQuery('');
   };
 
-  let handleSelect = value => {
+  var handleSelect = value => {
     setSelect(value);
+  };
+
+  var handleScrollTop = () => {
+    $('html, body').animate({scrollTop: 0});
   };
 
   return (
     <div>
-      <Search handleSearch={handleSearch} handleClear={handleClear} search={search}/>
+      <img className={styles.image} src='/up-arrow.svg' onClick={e => handleScrollTop()}></img>
+      <Search handleSearch={handleSearch} handleClear={handleClear} search={search} />
       <Filter handleSelect={handleSelect} />
       <div className={styles.body}>
-        {query.length > 0 ? <AnimeList animes={search}/> : <AnimeList animes={animes}/>}
-        <Panel />
+        {query.length > 0 ? <AnimeList animes={search}/> : <AnimeList animes={animes} />}
+        <Panel handleSelect={handleSelect} />
       </div>
     </div>
   );

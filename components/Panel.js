@@ -3,24 +3,24 @@ import axios from 'axios';
 import Link from 'next/link';
 import styles from '../styles/Panel.module.css';
 
-const Panel = () => {
+const Panel = ({ handleSelect }) => {
   return (
     <div className={styles.body}>
       <div>
         <h4>Search Anime by Genres</h4>
         <ul>
-          <li>Action</li>
-          <li>Adventure</li>
-          <li>Comedy</li>
-          <li>Drama</li>
-          <li>Slice of Life</li>
-          <li>Fantasy</li>
-          <li>Magic</li>
-          <li>Horror</li>
-          <li>Mystery</li>
-          <li>Psychological</li>
-          <li>Romance</li>
-          <li>Sci-Fi</li>
+          <li onClick={e => handleSelect(e.target.innerText)}>Action</li>
+          <li onClick={e => handleSelect(e.target.innerText)}>Adventure</li>
+          <li onClick={e => handleSelect(e.target.innerText)}>Comedy</li>
+          <li onClick={e => handleSelect(e.target.innerText)}>Drama</li>
+          <li onClick={e => handleSelect(e.target.innerText)}>Slice of Life</li>
+          <li onClick={e => handleSelect(e.target.innerText)}>Fantasy</li>
+          <li onClick={e => handleSelect(e.target.innerText)}>Magic</li>
+          <li onClick={e => handleSelect(e.target.innerText)}>Horror</li>
+          <li onClick={e => handleSelect(e.target.innerText)}>Mystery</li>
+          <li onClick={e => handleSelect(e.target.innerText)}>Psychological</li>
+          <li onClick={e => handleSelect(e.target.innerText)}>Romance</li>
+          <li onClick={e => handleSelect(e.target.innerText)}>Sci-Fi</li>
         </ul>
       </div>
     </div>
