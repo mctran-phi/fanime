@@ -3,14 +3,14 @@
   margin-left: 20px;
   margin-right: 20px;
   padding: 10px;
-  background-color: azure;
+  background-color: #FFFFFF;
   border: 10px solid paleturquoise;
   border-radius: 5px;
 }
 
 .title {
   text-align: center;
-  color: azure;
+  color: #FFFFFF;
 }
 
 .info {
@@ -20,7 +20,7 @@
 }
 
 .description {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #111111;
   padding-bottom: 10px;
 }
 
@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   margin: 20px;
-  color: azure;
+  color: #FFFFFF;
 }
 
 .video img, .video span {
@@ -44,4 +44,10 @@
 .video img {
   width: 30px;
   height: 30px;
+}
+
+.list li {
+  color: #111111;
+  list-style-type: none;
+  width: 100%;
 }

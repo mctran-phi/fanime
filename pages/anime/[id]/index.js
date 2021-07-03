@@ -23,7 +23,7 @@ const anime = ({ anime }) => {
           <img className={styles.image} src={anime.attributes.posterImage.small}></img>
           <div className={styles.info}>
             <div className={styles.description}>{anime.attributes.description}</div>
-            <ul>
+            <ul className={styles.list}>
               <li>Start Date: {dayjs(anime.attributes.startDate).format('MMMM D, YYYY')}</li>
               <li>End Date: {anime.attributes.endDate ? dayjs(anime.attributes.endDate).format('MMMM D, YYYY') : null}</li>
               <li>Status: {anime.attributes.status}</li>

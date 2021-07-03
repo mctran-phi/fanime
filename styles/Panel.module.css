@@ -11,5 +11,19 @@
 }
 
 .header {
-  color: darkslategray;
+  color: #111111;
+}
+
+.list li {
+  font-weight: bold;
+  color: gainsboro;
+  list-style-type: none;
+  width: 100%;
+  margin-right: 30px;
+}
+
+.list li:hover {
+  cursor: pointer;
+  color: skyblue;
+  text-decoration: underline;
 }

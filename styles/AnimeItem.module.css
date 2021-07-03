@@ -3,12 +3,13 @@
   text-align: center;
   margin: 10px;
   padding: 10px;
-  color: darkslateblue;
+  color: gainsboro;
 }
 
 .anime_item:hover {
   cursor: pointer;
   color: skyblue;
+  text-decoration: underline;
 }
 
 .image {
