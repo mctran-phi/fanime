@@ -23,7 +23,7 @@ export default function Home() {
     setFilter({
       select: select,
       offset: offset
-    })
+    });
   }, [offset, select]);
 
   useEffect(() => {

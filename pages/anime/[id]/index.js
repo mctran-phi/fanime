@@ -37,7 +37,6 @@ const anime = ({ anime }) => {
           </div>
         </div>
         <div className={styles.video}>
-          {console.log(video)}
           <label>Watch here: </label>
           {video && video.attributes && video.attributes.url ? (<a href={video.attributes.url} target='_blank'>
             <img src='/play.svg'></img>
