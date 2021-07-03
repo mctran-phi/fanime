@@ -3,11 +3,12 @@
   text-align: center;
   margin: 10px;
   padding: 10px;
+  color: darkslateblue;
 }
 
 .anime_item:hover {
   cursor: pointer;
-  color: cyan;
+  color: skyblue;
 }
 
 .image {

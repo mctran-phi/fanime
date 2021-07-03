@@ -21,6 +21,8 @@ ul {
 }
 
 li {
+  font-weight: bold;
+  color: darkslateblue;
   list-style-type: none;
   width: 100%;
   margin-right: 30px;
@@ -28,6 +30,6 @@ li {
 
 li:hover {
   cursor: pointer;
-  color: cyan;
+  color: skyblue;
   text-decoration: underline;
 }

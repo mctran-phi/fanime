@@ -7,7 +7,7 @@ const Panel = ({ handleSelect }) => {
   return (
     <div className={styles.body}>
       <div>
-        <h4>Search Anime by Genres</h4>
+        <h3 className={styles.header}>Search Anime by Genres</h3>
         <ul>
           <li onClick={e => handleSelect(e.target.innerText)}>Action</li>
           <li onClick={e => handleSelect(e.target.innerText)}>Adventure</li>
