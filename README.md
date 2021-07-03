@@ -1,8 +1,12 @@
-# Anime
+# Fanime
 
 ## Description
 
 This is an Anime viewing platform that allows users to view and search for any animes they may find interesting to watch!
+
+## Demo
+
+![](https://github.com/mctran-phi/anime-next/blob/main/public/fanime_demo.gif)
 
 ## Dependencies
 
@@ -16,12 +20,8 @@ This should give you all the necessary files to get started.
 
 ## Instructions
 
-To start the application run the command after you have pull or clone.
+To start the application run the command after you have pulled or cloned.
 
 ```sh
 npm run dev
 ```
-
-## Demo
-
-![](https://github.com/mctran-phi/anime-next/blob/main/public/AnimeDemo.gif)
