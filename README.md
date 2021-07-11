@@ -2,7 +2,7 @@
 
 ## Description
 
-This is an Anime viewing platform that allows users to view and search for any animes they may find interesting to watch!
+This is an Anime viewing platform that allows users to view and search for any animes they may find interesting to watch! Fnaime is created with Next.js, React.js, Javascript, HTML, and CSS.
 
 ## Demo
 
