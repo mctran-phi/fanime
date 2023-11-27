@@ -1,6 +1,3 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import Link from 'next/link';
 import styles from '../styles/Panel.module.css';
 
 const Panel = ({ handleSelect }) => {

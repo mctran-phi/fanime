@@ -19,16 +19,6 @@
   }
 }
 
-/* @keyframes slide-in {
-  from {
-    margin-left: 50%;
-  }
-
-  to {
-    margin-left: 0%;
-  }
-} */
-
 .anime_item:hover {
   cursor: pointer;
   color: skyblue;

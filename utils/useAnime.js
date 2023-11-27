@@ -5,7 +5,7 @@ const useAnime = (query, offset, select) => {
   const [loading, setLoading] = useState(true);
   const [animes, setAnimes] = useState([]);
 
-  useEffect(async () => {
+  var getNewAnime = async() => {
     var newAnimes;
     setLoading(true);
     if (select === '0') {
@@ -17,6 +17,10 @@ const useAnime = (query, offset, select) => {
     }
     offset === 0 ? setAnimes(newAnimes) : setAnimes([...animes, ...newAnimes]);
     setLoading(false);
+  };
+
+  useEffect(() => {
+    getNewAnime();
   }, [offset, select, query]);
   return { loading, animes };
 };

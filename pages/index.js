@@ -1,10 +1,8 @@
-import Link from 'next/link';
 import AnimeList from '../components/AnimeList';
 import Search from '../components/Search';
 import Panel from '../components/Panel';
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import styles from '../styles/Home.module.css';
-import getRequest from '../utils/fetch.js';
 import useAnime from '../utils/useAnime.js';
 import $ from 'jquery';
 
